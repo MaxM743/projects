@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Mon sketch p5</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "LaTeX";
+    }
+        
+  
+  </style>
+</head>
+<div>
+<body>
+  <script src="p5/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    let x = 20;
+    let y = 40;
+    let dx = 5;
+    let dy = 3;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      background(200);
+      x += dx;
+      y += dy;
+      if (x > width || x < 0) {
+        dx *= -1;
+      }
+      if (y > height || y < 0) {
+        dy *= -1;
+      }
+      ellipse(x, y, 50, 50);
+    }
+  </script>
+  <script>
+  MathJax.typeset()
+</script>
+</div>
+<div id="output">
+  $$\text{Voici un exemple de texte compilé avec LaTeX :}$$
+  $$\text{Le théorème de Pythagore s'écrit }a^2 + b^2 = c^2.$$
+</div>
+
+</body>
+
+
+
+
+
+</html>
